@@ -16,13 +16,15 @@
 | ⚠️ | Information de seconde main ou contradictoire selon les sources : à vérifier avant citation |
 | 🔧 | Correction / précision apportée par rapport à la littérature courante |
 
+> **Note sur les encadrés ASCII** : les « fiches » (numéros de version, copyrights, chiffres de performance) sont des synthèses illustratives. Elles n'ont pas valeur de citation : se reporter à l'Annexe C pour les points corrigés ou à recouper.
+
 ---
 
 ## Sommaire
 
 - [0. Vue d'ensemble : frise chronologique et cartographie](#0-vue-densemble)
-- [1. Introduction : pourquoi le logiciel était l'autre front de la guerre](#1-introduction)
-- [2. Le workflow du cracker : de la disquette au .nfo](#2-le-workflow-du-cracker)
+- [1. Introduction : pourquoi le logiciel était l'autre front de la guerre](#1-introduction--pourquoi-le-logiciel-était-lautre-front-de-la-guerre)
+- [2. Le workflow du cracker : de la disquette au .nfo](#2-le-workflow-du-cracker--de-la-disquette-au-nfo)
 - [3. Les grandes familles d'outils logiciels](#3-les-grandes-familles-doutils-logiciels)
   - [3.1 Assembleurs et désassembleurs](#31-assembleurs-et-désassembleurs)
   - [3.2 Moniteurs machine](#32-moniteurs-machine)
@@ -41,56 +43,50 @@
   - [4.4 ZX Spectrum](#44-zx-spectrum)
   - [4.5 Amstrad CPC](#45-amstrad-cpc)
   - [4.6 Apple II](#46-apple-ii)
-  - [4.7 Atari 8 bits (400/800/XL/XE)](#47-atari-8-bits)
+  - [4.7 Atari 8 bits (400/800/XL/XE)](#47-atari-8-bits-400800xlxe)
   - [4.8 IBM PC / compatibles](#48-ibm-pc--compatibles)
-  - [4.9 Consoles (NES, Mega Drive, SNES)](#49-consoles)
-- [5. Études de cas : le cracking en action](#5-études-de-cas)
+  - [4.9 Consoles (NES, Mega Drive, SNES)](#49-consoles-nes-mega-drive-snes)
+- [5. Études de cas : le cracking en action](#5-études-de-cas--le-cracking-en-action)
 - [6. Culture, groupes et héritage](#6-culture-groupes-et-héritage)
 - [7. Conclusion](#7-conclusion)
 - [Annexes](#annexes)
 
 ---
 
-## 0. Vue d'ensemble {#0-vue-densemble}
+## 0. Vue d'ensemble
 
 ### 0.1 Frise chronologique des outils logiciels majeurs
 
 ```mermaid
 timeline
-    title Outils logiciels de la scène (1978-2020)
-    1978 : Apple II - Monitor (ROM) / Integer BASIC
-    1980 : Atari 8-bit - Atari Assembler Editor / MAC/65
-    1982 : C64 - Monitor (ROM KERNAL) / Simon's Basic
-         : Amiga - aucune (machine pas encore sortie)
-    1984 : CPC - AADE / Maxam
-         : ST - Devpac ST / GFA Basic
-    1985 : C64 - Supermon 64 / Turbo Assembler / Soundmonitor
-         : Spectrum - MCoder / OCP Art Studio / The Quill
-         : Apple II - Merlin / Copy II Plus / Locksmith
-    1986 : C64 - Action Replay monitor / FC3 monitor / JCH Editor
-         : Amiga - SoundTracker / Deluxe Paint II / PhxAss
-    1987 : Amiga - NoiseTracker / ProTracker / Barfly / X-Copy
-         : ST - Soundtracker ST / NEOchrome / Copy ST
-         : PC - DEBUG / Copy II PC / MASM 4.0
-    1988 : C64 - Pucrunch (Pasi Ojala) / Exomizer (plus tard)
-         : Amiga - ProTracker 1.0 / Imploder / DPaint III
-         : ST - STOS / MadMac / Degas Elite
-    1989 : C64 - Maverick / Renegade / ByteBoiler
-         : Amiga - OctaMED / DPaint IV / PowerPacker
-    1990 : PC - FastTracker / Scream Tracker / Turbo Debugger
-         : C64 - C64 Debugger (premières versions)
-    1992 : PC - Impulse Tracker / NASM / Doom WAD editors
-    1994 : Amiga - HRTMon / Enforcer / MungWall
-    1996 : PC - ModPlug Tracker / WinUAE
-    2000 : C64 - ACME / CBM Prg Studio
-    2009 : KryoFlux Control Center / IPF tools
-    2017 : Exomizer 3 / HxC Floppy Emulator Software
-    2020 : Greaseweazle host tools / VASM (multi-plateformes)
+    title Outils logiciels de la scène (1978-2018)
+    1978 : Apple II - Moniteur en ROM
+    1983 : Spectrum - The Quill (Gilsoft)
+         : Apple II - Copy II Plus (Central Point)
+    1985 : Amiga - Deluxe Paint (Electronic Arts)
+         : ST - NEOchrome
+         : PC - Copy II PC
+    1986 : C64 - Soundmonitor
+         : ST - DEGAS (Batteries Included)
+    1987 : Amiga - SoundTracker (Karsten Obarski)
+    1989 : Amiga - NoiseTracker / PowerPacker
+         : PC - Turbo Debugger (Borland)
+    1990 : Amiga - ProTracker
+         : PC - Scream Tracker
+    1992 : PC - FastTracker 1
+    1994 : PC - FastTracker 2 / Scream Tracker 3
+    1995 : PC - Impulse Tracker
+    1997 : C64 - Pucrunch (Pasi Ojala)
+    1999 : Multi - VASM
+    2002 : C64 - Exomizer (Magnus Lind)
+    2009 : Préservation - KryoFlux
+    2014 : Préservation - SuperCard Pro
+    2018 : Préservation - Greaseweazle
 ```
 
 ### 0.2 Cartographie des familles d'outils
 
-```
+```text
                           ┌─────────────────────────────────────┐
                           │   OUTILS LOGICIELS DE LA SCÈNE      │
                           └──────────────┬──────────────────────┘
@@ -129,7 +125,7 @@ flowchart LR
 
 ---
 
-## 1. Introduction : pourquoi le logiciel était l'autre front de la guerre {#1-introduction}
+## 1. Introduction : pourquoi le logiciel était l'autre front de la guerre
 
 Le document compagnon traitait du **matériel** : freezers, copieurs de flux, câbles parallèles. Mais un cracker ne faisait pas que figer la mémoire ou copier des pistes : il devait **comprendre, modifier, reconditionner** le code. Cela exigeait une panoplie logicielle tout aussi sophistiquée, souvent développée par les crackers eux-mêmes et diffusée au sein des groupes.
 
@@ -142,11 +138,11 @@ Ce rapport passe en revue les logiciels qui ont permis à la scène de produire 
 
 ---
 
-## 2. Le workflow du cracker : de la disquette au .nfo {#2-le-workflow-du-cracker}
+## 2. Le workflow du cracker : de la disquette au .nfo
 
 Avant de détailler les outils, il faut comprendre **comment ils s'enchaînent**. Voici le flux typique d'un crack « single-load » sur C64 ou Amiga :
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────────────────┐
  │ 1. ACQUISITION                                                           │
  │    • Copie physique de l'original (Cyclone, KryoFlux, Catweasel)         │
@@ -182,11 +178,11 @@ Chaque étape mobilise des outils spécifiques, que nous allons passer en revue.
 
 ---
 
-## 3. Les grandes familles d'outils logiciels {#3-les-grandes-familles-doutils-logiciels}
+## 3. Les grandes familles d'outils logiciels
 
 ### 3.1 Assembleurs et désassembleurs
 
-L'assembleur est **l'outil fondamental** du cracker. Il transforme du code source en langage machine (assembleur) ou, à l'inverse, désassemble du binaire en mnémoniques lisibles.
+L'assembleur est **l'outil fondamental** du cracker. Il transforme du code source écrit en mnémoniques en code machine binaire ou, à l'inverse, désassemble du binaire en mnémoniques lisibles.
 
 #### 3.1.1 Critères de choix
 
@@ -210,12 +206,12 @@ L'assembleur est **l'outil fondamental** du cracker. Il transforme du code sourc
 
 #### 3.1.3 Zoom : Turbo Assembler (C64)
 
-Développé par **Tommi Rantanen** (alias *Slimey*) vers 1987, Turbo Assembler (TASM) était la référence absolue sur C64.
+Apparu au milieu des années 1980, Turbo Assembler (TASM) était une référence sur C64 ⚠️ (l'attribution de l'auteur varie selon les sources ; on cite souvent Magnus Nyman).
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  TURBO ASSEMBLER 3.0                                         │
- │  Copyright (c) 1987-1990 Tommi Rantanen                      │
+ │  Copyright (c) 1987-1990 (auteur : voir texte)               │
  ├──────────────────────────────────────────────────────────────┤
  │  • Assembleur rapide (quelques secondes pour 10 Ko)          │
  │  • Macros puissantes, includes                               │
@@ -231,7 +227,7 @@ TASM a été **cloné, hacké, étendu** par la scène : des versions « Triad �
 
 #### 3.1.4 Zoom : VASM (multi-plateforme, moderne)
 
-**VASM** (Volker Barthelmann's Assembler), développé à partir de 1999, est l'assembleur moderne de référence pour la scène rétro. Il supporte **tous les CPU de l'époque** (6502, Z80, 68000, x86, 6809, 8080, etc.) avec une syntaxe unifiée ou native. Il est utilisé aujourd'hui pour développer de nouveaux logiciels rétro et pour recompiler d'anciens projets.
+**VASM** (Volker Barthelmann's Assembler), développé à partir de 1999, est l'assembleur moderne de référence pour la scène rétro. Il supporte **de nombreux CPU de l'époque** (6502, Z80, 68000, 6809, 8080, etc.) avec une syntaxe unifiée ou native. Il est utilisé aujourd'hui pour développer de nouveaux logiciels rétro et pour recompiler d'anciens projets.
 
 ### 3.2 Moniteurs machine
 
@@ -271,7 +267,7 @@ Le moniteur est **l'inspecteur de mémoire**. Il permet de visualiser et modifie
 
 #### 3.2.4 Zoom : HRTMon (Amiga)
 
-**HRTMon** (High Resolution Tracker Monitor), développé par **Hans-Jörg Frieden** puis maintenu par la communauté, est le moniteur de référence sur Amiga. Il est **intégré dans WinUAE** et dans **WHDLoad** (le système de portage de jeux Amiga sur disques durs). Ses fonctions clés :
+**HRTMon** est un moniteur/freezer logiciel de référence sur Amiga, à l'origine distribué sous forme de cartouche ou de ROM. Il est **pris en charge par WinUAE** (émulation de la cartouche) et peut être invoqué depuis **WHDLoad** (le système d'installation de jeux Amiga sur disque dur) ⚠️. L'auteur et la signification exacte du nom sont à recouper. Ses fonctions clés :
 
 - Désassemblage 68000 complet avec symboles
 - Inspection des **listes Copper** (structure de contrôle du coprocesseur graphique)
@@ -309,7 +305,7 @@ Turbo Debugger a formé **toute une génération de développeurs PC** et a ét�
 
 #### 3.3.3 Zoom : Barfly (Amiga)
 
-**Barfly**, développé par **Barfly** (le groupe, ou un développeur homonyme), était un environnement de développement complet pour Amiga :
+**Barfly** était un environnement de développement complet pour Amiga ⚠️ (auteur à recouper) :
 
 - Assembleur 68000 intégré
 - Moniteur machine
@@ -342,9 +338,9 @@ Un copieur logiciel **dépend du système d'exploitation** et du **contrôleur d
 
 #### 3.4.3 Zoom : Maverick / Renegade (C64)
 
-**Renegade**, renommé **Maverick** après un litige de marque avec Taito, n'était pas un simple copieur : c'était un **système paramétré**.
+**Maverick** (parfois associé à une version antérieure nommée **Renegade** ⚠️) n'était pas un simple copieur : c'était un **système paramétré**.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  MAVERICK V5.04                                              │
  │  The Ultimate C64 Disk Copier                                │
@@ -391,7 +387,7 @@ Un cracker ne distribue pas une image mémoire brute de 64 Ko (C64) ou de 880 Ko
 
 **PowerPacker**, développé par **Nico François** vers 1989, était le packer de référence sur Amiga. Son algorithme LZ était optimisé pour le 68000 et offrait un excellent taux de compression pour l'époque.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  POWERPACKER 4.0                                             │
  │  Copyright (c) 1989-1992 Nico François                       │
@@ -411,7 +407,7 @@ PowerPacker a été **porté sur ST** et a été utilisé pour packer de nombreu
 
 **Exomizer**, développé par **Magnus Lind** à partir de 2002, est le packer moderne de référence pour C64. Il offre un **taux de compression inégalé** (souvent 10-15% meilleur que Pucrunch) et génère des décompresseurs très compacts (quelques centaines d'octets).
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  EXOMIZER 3.0                                                │
  │  Copyright (c) 2002-2020 Magnus Lind                         │
@@ -433,16 +429,16 @@ La musique est **l'âme de la scène**. Les cracktros et démos étaient jugées
 
 Un tracker est un éditeur de musique qui représente la partition sous forme de **grille verticale** (temps) et **horizontale** (voix/canaux). Chaque ligne contient des **notes**, des **instruments** et des **effets**.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  EXEMPLE DE PATTERN (ProTracker, Amiga)                      │
  ├──────────────────────────────────────────────────────────────┤
- │  Ligne  | Voix 1    | Voix 2    | Voix 3    | Voix 4        │
- │  -------|-----------|-----------|-----------|-----------    │
- │  00     | C-4 01 A0 | ... 00 00 | E-3 02 00 | ... 00 00     │
- │  01     | ... 00 00 | G-3 03 00 | ... 00 00 | C-4 04 00     │
- │  02     | D-4 01 00 | ... 00 00 | F-3 02 00 | ... 00 00     │
- │  ...    | ...       | ...       | ...       | ...           │
+ │  Ligne  | Voix 1    | Voix 2    | Voix 3    | Voix 4         │
+ │  -------|-----------|-----------|-----------|-----------     │
+ │  00     | C-4 01 A0 | ... 00 00 | E-3 02 00 | ... 00 00      │
+ │  01     | ... 00 00 | G-3 03 00 | ... 00 00 | C-4 04 00      │
+ │  02     | D-4 01 00 | ... 00 00 | F-3 02 00 | ... 00 00      │
+ │  ...    | ...       | ...       | ...       | ...            │
  └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -452,7 +448,7 @@ Un tracker est un éditeur de musique qui représente la partition sous forme de
 | --- | --- | --- |
 | Amiga | **SoundTracker** ✅ (1987), **NoiseTracker** ✅, **ProTracker** ✅ (1990), OctaMED ✅, Startrekker | .MOD ✅ |
 | ST | Soundtracker ST, DigiTracker, ProTracker ST | .MOD |
-| C64 | **Soundmonitor** ✅, JCH Editor, Future Composer, **SIDMON** ✅, Music Assembler | .SID (player), .SNG |
+| C64 | **Soundmonitor** ✅, JCH Editor, Future Composer, SidMon ⚠️, Music Assembler | .SID (player), .SNG |
 | Spectrum | Wham! The Music Box, Vortex Tracker, Aztec Music | .AY, .PSG |
 | CPC | Wham, Soundtrakker, Arkos Tracker (moderne) | .AY, .AKM |
 | PC | **FastTracker 2** ✅ (1994), **Impulse Tracker** ✅ (1995), **Scream Tracker 3** ✅ (1994), ModPlug Tracker | .XM, .IT, .S3M, .MOD |
@@ -460,12 +456,12 @@ Un tracker est un éditeur de musique qui représente la partition sous forme de
 
 #### 3.6.3 Zoom : ProTracker (Amiga)
 
-**ProTracker**, développé par **Lars Hamre**, **Anders Hamre**, **Olav Sørensen** et **Pål Gulbrandsen** (le groupe **Crusaders**) en 1990, est **le tracker de référence** sur Amiga. Il a défini le format **.MOD**, devenu un standard inter-plateformes.
+**ProTracker**, développé à partir de 1990 par **Amiga Freelancers** (notamment Lars Hamre, Anders Hamre, Olav Sørensen et Pål Gulbrandsen ⚠️), prolonge **SoundTracker** (Karsten Obarski, 1987) et **NoiseTracker** (Mahoney et Kaktus, 1989). C'est **le tracker de référence** sur Amiga. Il a défini le format **.MOD**, devenu un standard inter-plateformes.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  PROTRACKER 3.62                                             │
- │  Copyright (c) 1990-1994 Crusaders                           │
+ │  Copyright (c) 1990-1994 Amiga Freelancers                   │
  ├──────────────────────────────────────────────────────────────┤
  │  • 4 voix (extensibles à 8, 16, 32 avec des hacks)           │
  │  • 32 instruments (échantillons 8 bits)                      │
@@ -476,7 +472,7 @@ Un tracker est un éditeur de musique qui représente la partition sous forme de
  └──────────────────────────────────────────────────────────────┘
 ```
 
-ProTracker a été **cloné sur PC** (FastTracker, Scream Tracker) et a défini le format .MOD, encore utilisé aujourd'hui.
+ProTracker a **inspiré les trackers PC** (Scream Tracker, FastTracker, puis OpenMPT et MilkyTracker) et a popularisé le format .MOD, encore utilisé aujourd'hui.
 
 #### 3.6.4 Zoom : SID (C64)
 
@@ -484,10 +480,10 @@ Sur C64, la musique n'utilisait pas un format de tracker standard, mais le **for
 
 Les outils de création étaient :
 
-- **Soundmonitor** ✅ (1986) : le premier éditeur de musique C64, par **Johannes Bjerregaard**
-- **JCH Editor** ✅ : amélioré par **Jochen Hippel** (alias **Mad Max**)
-- **Future Composer** ✅ : par **Chris Hülsbeck** (musique de *Turrican*)
-- **SIDMON** ✅ : par **Laxity**
+- **Soundmonitor** ✅ (1986) : éditeur de musique SID très répandu, par **Chris Hülsbeck**
+- **JCH Editor** ✅ : créé par **Jens-Christian Huus** (JCH) ; à ne pas confondre avec les formats « Hippel/CoSo » de **Jochen Hippel** (alias *Mad Max*), qui concernent surtout l'ST et l'Amiga
+- **Future Composer** ⚠️ : éditeur/player répandu sur Amiga et C64 ; auteur à recouper (à ne pas confondre avec les outils de Chris Hülsbeck, compositeur de *Turrican*)
+- **SidMon** ⚠️ : éditeur surtout connu sur Amiga ; version C64 à recouper. **Laxity** est un musicien/codeur de la scène C64 (NewPlayer), à ne pas confondre
 
 Aujourd'hui, **GoatTracker 2** ✅ et **SID-Wizard** ✅ sont les outils modernes de composition SID.
 
@@ -508,18 +504,17 @@ Le graphisme était l'autre pilier de la scène. Les éditeurs graphiques permet
 | Atari 8-bit | MicroPainter, Doodle | .PIC |
 | PC | **Deluxe Paint** ✅ (PC), CorelDRAW, Photoshop (plus tard) | .BMP, .PCX, .GIF |
 
+#### 3.7.2 Zoom : Deluxe Paint (Amiga)
 
-#### 3.7.2 Zoom : Deluxe Paint (Amiga) — suite
+**Deluxe Paint** (DPaint), développé par **Dan Silva** pour **Electronic Arts** en 1985, est **l'éditeur graphique de référence** sur Amiga. Les versions suivantes (DPaint III, 1989) ont introduit l'**animation** (animbrushes).
 
-**Deluxe Paint** (DPaint), développé par **Dan Silva** pour **Electronic Arts** en 1985, est **l'éditeur graphique de référence** sur Amiga. Sa version II (1988) a introduit l'**animation**, faisant de DPaint un outil de création d'animations (animbrushes).
-
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
- │  DELUXE PAINT II (Amiga)                                     │
- │  Copyright (c) 1988 Electronic Arts                          │
+ │  DELUXE PAINT III (Amiga)                                    │
+ │  Copyright (c) 1989 Electronic Arts                          │
  ├──────────────────────────────────────────────────────────────┤
  │  • Édition bitmap (320×200, 640×200, 640×400)                │
- │  • 32 couleurs (EHB) ou 4096 (HAM)                           │
+ │  • 32 couleurs (64 en EHB), 4096 en HAM                      │
  │  • Animation (animbrushes)                                   │
  │  • Outils : pinceau, aérog, remplissage, sélection           │
  │  • Gestion des bitplanes (4 à 6)                             │
@@ -532,18 +527,18 @@ DPaint a été **cloné et étendu** par la scène : des versions modifiées cir
 
 #### 3.7.3 Zoom : Koala Painter (C64)
 
-**Koala Painter**, développé par **Koala** (le groupe) vers 1985, était l'éditeur graphique de référence sur C64. Il permettait de créer des images en **mode multicolore** (160×200, 4 couleurs par bloc de 4 pixels) et de les sauvegarder au format **.KOALA** (6 Ko : 8 000 octets de données bitmap + 1 000 octets de couleurs + 1 000 octets de couleurs de fond + 1 000 octets de couleurs de sprite).
+**Koala Painter**, édité par **Koala Technologies** (célèbre pour la tablette KoalaPad) au début des années 1980, était un éditeur graphique de référence sur C64. Il permettait de créer des images en **mode multicolore** (160×200, 4 couleurs par cellule de 4×8 pixels) et de les sauvegarder au format **.KOALA** (≈ 10 Ko : 8 000 octets de bitmap + 1 000 octets de matrice vidéo + 1 000 octets de color RAM + 1 octet de couleur de fond, plus l'adresse de chargement).
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  KOALA PAINTER V1.0                                          │
- │  Copyright (c) 1985 Koala                                    │
+ │  Copyright (c) Koala Technologies                            │
  ├──────────────────────────────────────────────────────────────┤
- │  • Mode multicolore : 160×200, 4 couleurs par bloc           │
+ │  • Mode multicolore : 160×200, 4 couleurs/cellule 4×8        │
  │  • Palette : 16 couleurs (VIC-II)                            │
  │  • Outils : pinceau, remplissage, ligne, cercle              │
- │  • Format .KOALA : 6 Ko (bitmap + 3 tables de couleurs)      │
- │  • Chargement direct en mémoire vidéo ($0400-$1F3F)          │
+ │  • Format .KOALA : ≈ 10 Ko (bitmap + 2 tables + fond)        │
+ │  • Adresse de chargement usuelle : $6000                     │
  │  • Utilisé pour la majorité des écrans-titres C64            │
  └──────────────────────────────────────────────────────────────┘
 ```
@@ -552,12 +547,12 @@ Koala Painter a été **massivement utilisé** pour créer les écrans de prése
 
 #### 3.7.4 Les éditeurs de sprites
 
-Le sprite est **l'unité graphique de base** sur C64 (64 sprites matériels de 24×21 pixels, extensibles en multicolore 12×21). Les éditeurs de sprites permettaient de dessiner ces éléments graphiques avec une précision pixel par pixel.
+Le sprite est **l'unité graphique de base** sur C64 (8 sprites matériels de 24×21 pixels, multicolores en 12×21). Les éditeurs de sprites permettaient de dessiner ces éléments graphiques avec une précision pixel par pixel.
 
 | Plateforme | Éditeurs de sprites | Particularités |
 | --- | --- | --- |
 | C64 | **Sprite Editor** (intégré à TASM), **Sprite Master**, **Graphic Assembler** | Édition 24×21, multicolore, animation (sprites multiples) |
-| Amiga | **DPaint** (déjà cité), **ProPaint** | Sprites matériels (jusqu'à 64×64), bitplanes |
+| Amiga | **DPaint** (déjà cité), **ProPaint** | 8 sprites matériels (16 pixels de large), bitplanes |
 | ST | **DEGAS**, **NEOchrome** | Sprites logiciels (bitmap), animation |
 | Spectrum | **Melbourne Draw**, **OCP Art Studio** | Sprites logiciels (32×24, 2 couleurs) |
 
@@ -592,25 +587,25 @@ Les systèmes d'exploitation d'origine étaient volontairement lents :
 | Plateforme | Fast loaders historiques | Débit atteint | Particularités |
 | --- | --- | --- | --- |
 | C64 | **Warp Speed** ✅ (1987), **JiffyDOS** ✅ (1988), **DolphinDOS**, **SpeedDOS**, **Magic Formel**, **Professional DOS** | 3-10 Ko/s | Protocole série optimisé, souvent combiné avec câble parallèle |
-| Amiga | **X-Copy** (intégré), **PowerCopy**, **SuperDiskCopy** | 20-40 Ko/s | Lecture directe via Paula, bypass de trackdisk.device |
-| ST | **ST-Copy**, **Copy ST** | 25-50 Ko/s | Accès direct au WD1772 |
+| Amiga | Trackloaders propriétaires ; **WHDLoad** (installation sur disque dur) | 20-40 Ko/s | Lecture directe via Paula, bypass de trackdisk.device |
+| ST | Loaders propriétaires | 25-50 Ko/s | Accès direct au WD1772 |
 | Spectrum | **Fast Loader** (divers), **Turbo Load** | 2 400-4 800 bauds | Format cassette optimisé |
-| CPC | **Maxam**, **AADE** | 10-20 Ko/s | Format disque optimisé |
+| CPC | Loaders propriétaires, formats disque non standard | Variable | ⚠️ Peu d'outils dédiés documentés |
 | Apple II | **Super IOB**, **Copy II Plus** (fast copy) | Variable | Contrôle direct de la Disk II |
 | PC | **Copy II PC** (fast copy), **Disk2Disk** | Variable | Accès direct au µPD765 |
 
 #### 3.8.3 Zoom : JiffyDOS (C64)
 
-**JiffyDOS**, développé par **Jim Brain** à partir de 1988, est **le fast loader de référence** sur C64. Il remplace les ROM du KERNAL du C64 et du DOS du 1541 par des versions optimisées qui exploitent le temps mort de la ligne d'horloge du bus IEC pour envoyer **2 bits par cycle** au lieu d'un seul.
+**JiffyDOS**, développé et commercialisé par **Creative Micro Designs (CMD)** à partir de la fin des années 1980, est **le fast loader de référence** sur C64. Il remplace les ROM du KERNAL du C64 et du DOS du 1541 par des versions optimisées qui exploitent le temps mort de la ligne d'horloge du bus IEC pour envoyer **2 bits par cycle** au lieu d'un seul.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  JIFFYDOS V6.01                                              │
- │  Copyright (c) 1988-1992 Jim Brain / JiffyDOS               │
+ │  Copyright (c) Creative Micro Designs                        │
  ├──────────────────────────────────────────────────────────────┤
  │  • Remplace les ROM KERNAL (C64) et DOS (1541)               │
  │  • Protocole série optimisé : 2 bits par cycle d'horloge     │
- │  • Débit : ≈ 3-6 Ko/s (×10 à ×15 par rapport au KERNAL)     │
+ │  • Débit : ≈ 3-6 Ko/s (×10 à ×15 par rapport au KERNAL)      │
  │  • Compatible avec la plupart des logiciels                  │
  │  • Commandes DOS étendues (@, $, etc.)                       │
  │  • Support des lecteurs 1541, 1571, 1581                     │
@@ -622,15 +617,15 @@ JiffyDOS a été **adopté par la majorité des utilisateurs C64** et est encore
 
 #### 3.8.4 Zoom : Warp Speed (C64)
 
-**Warp Speed**, développé par **Skyles Electric Works** en 1987, était l'un des premiers fast loaders commerciaux pour C64. Il se présentait sous forme de cartouche ou de disquette et offrait une accélération significative du chargement.
+**Warp Speed** (vers 1987 ⚠️ ; éditeur à recouper) était un des fast loaders commerciaux pour C64. Il se présentait sous forme de cartouche ou de disquette et offrait une accélération significative du chargement.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  WARP SPEED V2.0                                             │
- │  Copyright (c) 1987 Skyles Electric Works                    │
+ │  Copyright (c) 1987 (éditeur à recouper)                     │
  ├──────────────────────────────────────────────────────────────┤
  │  • Fast loader pour disque et cassette                       │
- │  • Débit : ≈ 3-5 Ko/s (disque), ≈ 2 Ko/s (cassette)         │
+ │  • Débit : ≈ 3-5 Ko/s (disque), ≈ 2 Ko/s (cassette)          │
  │  • Outils de copie intégrés                                  │
  │  • Moniteur machine intégré                                  │
  │  • Désactivation logicielle (pour compatibilité)             │
@@ -654,7 +649,7 @@ flowchart LR
 
 La contre-mesure des crackers était double :
 
-1. **Désactiver le fast loader** pendant le chargement du jeu (via une option « Final Kill » sur la Final Cartridge III, ou un interrupteur sur les cartouches).
+1. **Désactiver le fast loader** pendant le chargement du jeu (via la fonction de désactivation (« kill ») des cartouches freezer, ou un interrupteur matériel).
 2. **Patcher la routine de mesure** pour qu'elle retourne toujours un temps « normal ».
 
 #### 3.8.6 Les trackloaders
@@ -684,16 +679,16 @@ La scène ne se contentait pas de cracker : elle **créait** aussi ses propres j
 
 **The Quill**, développé par **Graeme Yeandle** et publié par **Gilsoft** en 1983, était **l'éditeur d'aventures textuelles de référence** sur Spectrum et CPC. Il permettait de créer des aventures sans programmation, en définissant des lieux, des objets, des messages et des conditions.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
- │  THE QUIL V3.0                                               │
+ │  THE QUILL                                                   │
  │  Copyright (c) 1983-1987 Gilsoft                             │
  ├──────────────────────────────────────────────────────────────┤
  │  • Éditeur d'aventures textuelles sans programmation         │
- │  • Définition de lieux (jusqu'à 255)                         │
- │  • Définition d'objets (jusqu'à 255)                         │
- │  • Définition de messages (jusqu'à 255)                      │
- │  • Conditions et événements (jusqu'à 255)                    │
+ │  • Définition de lieux (limité par la RAM)                   │
+ │  • Définition d'objets (limité par la RAM)                   │
+ │  • Définition de messages (limité par la RAM)                │
+ │  • Conditions et événements (limité par la RAM)              │
  │  • Compilation en fichier exécutable autonome                │
  │  • Utilisé pour des centaines d'aventures amateurs           │
  └──────────────────────────────────────────────────────────────┘
@@ -721,7 +716,7 @@ La scène des années 80-90 a légué un patrimoine logiciel immense, aujourd'hu
 | --- | --- | --- | --- | --- |
 | **KryoFlux** ✅ | 2009 | PC (USB) | ≈ 41,6 ns | Streams KryoFlux, IPF |
 | **SuperCard Pro** ✅ | 2014 | PC (USB) | 25 ns | SCP |
-| **Greaseweazle** ✅ | 2020 | PC (USB) | ≈ 13,9 ns | Flux brut (SCP, KryoFlux) |
+| **Greaseweazle** ✅ | 2018 | PC (USB) | ≈ 13,9 ns | Flux brut (SCP, KryoFlux) |
 | **Catweasel** | 1996 | Amiga, PC (ISA/PCI) | Variable | ADF, flux brut |
 | **DiscFerret** | 2010 | PC (USB) | Variable | Flux brut |
 | **FluxEngine** | 2019 | PC (USB) | Variable | Flux brut |
@@ -760,10 +755,10 @@ La scène rétro utilise aujourd'hui des outils modernes pour développer de nou
 
 | Outil | Année | Plateforme | Fonction |
 | --- | --- | --- | --- |
-| **ACME** ✅ | 1990s | Multi (6502, Z80, 68000) | Assembleur cross-platform |
+| **ACME** ✅ | 1990s | Famille 6502 | Assembleur cross-platform |
 | **64TASS** ✅ | 1990s | 6502 | Assembleur C64 avancé |
 | **VASM** ✅ | 1999 | Multi | Assembleur multi-CPU |
-| **Exomizer 3** ✅ | 2020 | 6502 | Packer moderne |
+| **Exomizer 3** ⚠️ | fin 2010s | 6502 | Packer moderne |
 | **GoatTracker 2** ✅ | 2000s | C64 (SID) | Tracker SID moderne |
 | **SID-Wizard** ✅ | 2000s | C64 (SID) | Tracker SID moderne |
 | **Charpad** ✅ | 2010s | C64 | Éditeur de charset moderne |
@@ -815,9 +810,9 @@ flowchart TD
 
 #### 4.1.3 Zoom : Maverick / Renegade
 
-**Renegade**, renommé **Maverick** après un litige de marque avec Taito, n'était pas un simple copieur : c'était un **système paramétré**.
+**Maverick** (parfois associé à une version antérieure nommée **Renegade** ⚠️) n'était pas un simple copieur : c'était un **système paramétré**.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  MAVERICK V5.04                                              │
  │  The Ultimate C64 Disk Copier                                │
@@ -863,7 +858,7 @@ L'Amiga a vu naître une scène de cracking et de démos particulièrement riche
 | Packer | **PowerPacker** ✅, Imploder, CrunchMania | **PowerPacker** ✅, **xPK** ✅ |
 | Tracker | **SoundTracker** ✅, **NoiseTracker** ✅, **ProTracker** ✅, OctaMED | **ProTracker** ✅ (moderne), **OctaMED** ✅ |
 | Éditeur graphique | **Deluxe Paint** ✅, ProPaint, Graffiti2 | **Deluxe Paint** ✅ (moderne), **GrafX2** ✅ |
-| Fast loader | X-Copy (intégré), PowerCopy | — |
+| Fast loader | Trackloaders propriétaires | **WHDLoad** ✅ |
 
 #### 4.2.2 Le workflow typique d'un cracker Amiga
 
@@ -889,12 +884,12 @@ flowchart TD
 
 #### 4.2.3 Zoom : ProTracker
 
-**ProTracker**, développé par les **Crusaders** (Lars Hamre, Anders Hamre, Olav Sørensen, Pål Gulbrandsen) en 1990, est **le tracker de référence** sur Amiga. Il a défini le format **.MOD**, devenu un standard inter-plateformes.
+**ProTracker**, développé à partir de 1990 par **Amiga Freelancers** (voir §3.6.3), est **le tracker de référence** sur Amiga. Il a défini le format **.MOD**, devenu un standard inter-plateformes.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  PROTRACKER 3.62                                             │
- │  Copyright (c) 1990-1994 Crusaders                           │
+ │  Copyright (c) 1990-1994 Amiga Freelancers                   │
  ├──────────────────────────────────────────────────────────────┤
  │  • 4 voix (extensibles à 8, 16, 32 avec des hacks)           │
  │  • 32 instruments (échantillons 8 bits)                      │
@@ -905,13 +900,13 @@ flowchart TD
  └──────────────────────────────────────────────────────────────┘
 ```
 
-ProTracker a été **cloné sur PC** (FastTracker, Scream Tracker) et a défini le format .MOD, encore utilisé aujourd'hui.
+ProTracker a **inspiré les trackers PC** (Scream Tracker, FastTracker, puis OpenMPT et MilkyTracker) et a popularisé le format .MOD, encore utilisé aujourd'hui.
 
 #### 4.2.4 Zoom : PowerPacker
 
 **PowerPacker**, développé par **Nico François** vers 1989, était le packer de référence sur Amiga. Son algorithme LZ était optimisé pour le 68000 et offrait un excellent taux de compression pour l'époque.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  POWERPACKER 4.0                                             │
  │  Copyright (c) 1989-1992 Nico François                       │
@@ -942,7 +937,7 @@ L'Atari ST a connu une scène de cracking active, bien que moins documentée que
 | Packer | PowerPacker, Imploder, CrunchMania | **PowerPacker** ✅ |
 | Tracker | Soundtracker ST, DigiTracker | **ProTracker ST** ✅ |
 | Éditeur graphique | **DEGAS** ✅, **NEOchrome** ✅, Cyber Paint | **GrafX2** ✅ |
-| Fast loader | Copy ST (intégré) | — |
+| Fast loader | Loaders propriétaires | — |
 
 #### 4.3.2 Le workflow typique d'un cracker ST
 
@@ -954,18 +949,18 @@ Le workflow ST était similaire à celui de l'Amiga, avec quelques spécificité
 
 #### 4.3.3 Zoom : DEGAS / DEGAS Elite
 
-**DEGAS** (DEluxe Graphics And Sound), développé par **Bastion Software** en 1985, était l'éditeur graphique de référence sur Atari ST. Sa version **DEGAS Elite** (1986) ajoutait des fonctions d'animation.
+**DEGAS** (Design and Entertainment Graphic Access System ⚠️), conçu par **Tom Hudson** et publié par **Batteries Included** en 1985-1986, était un éditeur graphique de référence sur Atari ST. Sa version **DEGAS Elite** (1987) ajoutait des fonctions avancées dont le cyclage de palette.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  DEGAS ELITE                                                 │
- │  Copyright (c) 1986 Bastion Software                         │
+ │  Copyright (c) Batteries Included                            │
  ├──────────────────────────────────────────────────────────────┤
  │  • Édition bitmap (320×200, 640×200, 640×400)                │
  │  • 16 couleurs (mode basse résolution)                       │
- │  • Animation (jusqu'à 32 frames)                             │
+ │  • Cyclage de palette                                        │
  │  • Outils : pinceau, remplissage, ligne, cercle              │
- │  • Format .PI1 (basse résolution), .PI2 (moyenne), .PI3 (haute) │
+ │  • Formats .PI1 / .PI2 / .PI3 (basse / moyenne / haute)      │
  │  • Utilisé pour la majorité des graphismes ST                │
  └──────────────────────────────────────────────────────────────┘
 ```
@@ -976,10 +971,10 @@ DEGAS a été **massivement utilisé** pour créer les écrans-titres, les logos
 
 La **Discovery Cartridge** (voir document compagnon, §4.B) était **le copieur matériel de référence** sur Atari ST. Elle permettait de copier les disquettes protégées en accédant directement au WD1772, contournant les limitations du GEMDOS.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  DISCOVERY CARTRIDGE                                         │
- │  Copyright (c) Happy Computers                               │
+ │  Éditeur : à recouper                                        │
  ├──────────────────────────────────────────────────────────────┤
  │  • Copieur matériel (cartouche)                              │
  │  • Accès direct au WD1772                                    │
@@ -1031,16 +1026,16 @@ flowchart TD
 
 **The Quill**, développé par **Graeme Yeandle** et publié par **Gilsoft** en 1983, était **l'éditeur d'aventures textuelles de référence** sur Spectrum. Il a permis la création de centaines d'aventures amateurs.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
- │  THE QUIL V3.0                                               │
+ │  THE QUILL                                                   │
  │  Copyright (c) 1983-1987 Gilsoft                             │
  ├──────────────────────────────────────────────────────────────┤
  │  • Éditeur d'aventures textuelles sans programmation         │
- │  • Définition de lieux (jusqu'à 255)                         │
- │  • Définition d'objets (jusqu'à 255)                         │
- │  • Définition de messages (jusqu'à 255)                      │
- │  • Conditions et événements (jusqu'à 255)                    │
+ │  • Définition de lieux (limité par la RAM)                   │
+ │  • Définition d'objets (limité par la RAM)                   │
+ │  • Définition de messages (limité par la RAM)                │
+ │  • Conditions et événements (limité par la RAM)              │
  │  • Compilation en fichier exécutable autonome                │
  │  • Utilisé pour des centaines d'aventures amateurs           │
  └──────────────────────────────────────────────────────────────┘
@@ -1050,14 +1045,14 @@ The Quill a été **porté sur CPC et C64**, devenant un standard inter-platefor
 
 #### 4.4.4 Zoom : OCP Art Studio
 
-**OCP Art Studio**, développé par **OCP** (Output Creative Programs) en 1985, était l'éditeur graphique de référence sur Spectrum.
+**OCP Art Studio**, développé par **OCP** (Oxford Computer Publishing) en 1985, était l'éditeur graphique de référence sur Spectrum.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  OCP ART STUDIO                                              │
  │  Copyright (c) 1985 OCP                                      │
  ├──────────────────────────────────────────────────────────────┤
- │  • Édition bitmap (256×192, 2 couleurs)                      │
+ │  • Bitmap 256×192, 2 couleurs/bloc d'attribut 8×8            │
  │  • Outils : pinceau, remplissage, ligne, cercle              │
  │  • Gestion des attributs de couleur (8×8 pixels)             │
  │  • Format .SCR (6 912 octets)                                │
@@ -1073,7 +1068,7 @@ L'Amstrad CPC a connu une scène de cracking active, notamment en France et en E
 
 | Catégorie | Outils historiques | Outils modernes |
 | --- | --- | --- |
-| Assembleur | **AADE** ✅ (Amstrad Assembler Development Environment), **Maxam** ✅ | **VASM** ✅, **Pasmo** ✅ |
+| Assembleur | **AADE** ⚠️, **Maxam** ✅ | **VASM** ✅, **Pasmo** ✅ |
 | Moniteur | AA Monitor, CPC Monitor | **WinAPE debugger** ✅, **CPCEmu debugger** |
 | Débuggeur | AA Monitor, CPC Monitor | **WinAPE debugger** ✅ |
 | Copieur | Discology, Copylock, divers | **KryoFlux** ✅, **Greaseweazle** ✅ |
@@ -1083,12 +1078,12 @@ L'Amstrad CPC a connu une scène de cracking active, notamment en France et en E
 
 #### 4.5.2 Le workflow typique d'un cracker CPC
 
-Le workflow CPC était similaire à celui du Spectrum, avec le **Multiface Two/Three** comme outil central :
+Le workflow CPC était similaire à celui du Spectrum, avec le **Multiface Two** comme outil central :
 
 ```mermaid
 flowchart TD
     A["Disquette ou K7 originale<br/>(protection Speedlock, Alkatraz)"] --> B["Chargement dans le CPC"]
-    B --> C["Gel via Multiface Two/Three<br/>(NMI, dump RAM)"]
+    B --> C["Gel via Multiface Two<br/>(NMI, dump RAM)"]
     C --> D["Sauvegarde de la RAM sur disque/K7"]
     D --> E["Chargement dans un moniteur<br/>(AA Monitor)"]
     E --> F["Désassemblage de la routine de protection"]
@@ -1103,12 +1098,12 @@ flowchart TD
 
 #### 4.5.3 Zoom : Maxam
 
-**Maxam**, développé par **Rebelmoon Software** en 1991, était l'assembleur de référence sur CPC.
+**Maxam**, assembleur de référence sur CPC, a été commercialisé au milieu des années 1980 (éditeur : Arnor ⚠️, à recouper).
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
- │  MAXAM V1.05                                                 │
- │  Copyright (c) 1991 Rebelmoon Software                       │
+ │  MAXAM                                                       │
+ │  Copyright (c) Arnor (à recouper)                            │
  ├──────────────────────────────────────────────────────────────┤
  │  • Assembleur Z80 complet                                    │
  │  • Macros, includes, labels                                  │
@@ -1142,7 +1137,7 @@ Le workflow Apple II était dominé par la **copie de disquettes 5,25"** :
 flowchart TD
     A["Disquette originale<br/>(protection DOS 3.3, ProDOS)"] --> B["Copie via Copy II Plus ou Locksmith"]
     B --> C{"Copie réussie ?"}
-    C -->|"non"| D["Copie via EDD (carte matérielle)<br/>ou nibble-level"]
+    C -->|"non"| D["Copie via EDD<br/>(niveau nibble)"]
     C -->|"oui"| E["Chargement dans le Monitor (ROM)"]
     D --> E
     E --> F["Désassemblage de la routine de protection"]
@@ -1157,7 +1152,7 @@ flowchart TD
 
 **Copy II Plus**, développé par **Central Point Software** en 1983, était **le copieur de référence** sur Apple II.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  COPY II PLUS V8.3                                           │
  │  Copyright (c) 1983-1990 Central Point Software              │
@@ -1172,16 +1167,16 @@ flowchart TD
  └──────────────────────────────────────────────────────────────┘
 ```
 
-Copy II Plus a été **complété par la carte EDD** (Essential Data Duplicator), qui permettait une copie au niveau du flux brut, contournant les protections les plus retorses.
+Copy II Plus était souvent **complété par EDD** (Essential Data Duplicator ⚠️, essentiellement un logiciel de copie au niveau nibble), pour contourner les protections les plus retorses.
 
 #### 4.6.4 Zoom : Locksmith
 
-**Locksmith**, développé par **Robert K. Arnov** en 1982, était un autre copieur de référence sur Apple II, concurrent de Copy II Plus.
+**Locksmith**, apparu au début des années 1980 (éditeur : Omega Microware / Alpha Logic ⚠️), était un autre copieur de référence sur Apple II, concurrent de Copy II Plus.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  LOCKSMITH V6.0                                              │
- │  Copyright (c) 1982-1989 Robert K. Arnov                     │
+ │  Copyright (c) 1982-1989 (voir texte)                        │
  ├──────────────────────────────────────────────────────────────┤
  │  • Copieur de disquettes 5,25"                               │
  │  • Support de nombreuses protections                         │
@@ -1213,16 +1208,16 @@ Le workflow Atari 8-bit était similaire à celui de l'Apple II, avec des protec
 
 ```mermaid
 flowchart TD
-    A["Disquette originale<br/>(protection par secteur défectueux)"] --> B["Copie via Happy 1050<br/>(lecteur modifié)"]
+    A["Disquette originale<br/>(protection par secteur défectueux)"] --> B["Copie logicielle standard<br/>(copieur de secteurs)"]
     B --> C{"Copie réussie ?"}
-    C -->|"non"| D["Copie via Discovery Cartridge<br/>(Atari ST, avec adaptateur)"]
+    C -->|"non"| D["Copie via lecteur Happy 1050<br/>(secteurs défectueux reproduits)"]
     C -->|"oui"| E["Chargement dans le moniteur"]
     D --> E
     E --> F["Désassemblage de la routine de protection"]
     F --> G["Patching des tests"]
     G --> H["Sauvegarde du crack"]
     H --> I["Distribution : BBS, swapping"]
-    style B fill:#1e3a5f,color:#fff
+    style D fill:#1e3a5f,color:#fff
     style G fill:#5f1e1e,color:#fff
 ```
 
@@ -1230,7 +1225,7 @@ flowchart TD
 
 **MAC/65**, développé par **Optimized Systems Software** (OSS) en 1983, était l'assembleur de référence sur Atari 8-bit.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  MAC/65 V1.1                                                 │
  │  Copyright (c) 1983-1988 Optimized Systems Software          │
@@ -1285,7 +1280,7 @@ flowchart TD
 
 **Turbo Debugger**, livré avec Turbo Pascal et Turbo C de Borland à partir de 1989, était **l'outil de débogage de référence** sur PC.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  TURBO DEBUGGER V5.0                                         │
  │  Copyright (c) 1989-1994 Borland International               │
@@ -1304,9 +1299,9 @@ Turbo Debugger a **formé toute une génération de développeurs PC** et a ét�
 
 #### 4.8.4 Zoom : FastTracker 2
 
-**FastTracker 2**, développé par **Fredrik Huss** et **Mikael Malmqvist** (le groupe **Triton**) en 1994, était **le tracker de référence** sur PC.
+**FastTracker 2**, développé par **Fredrik Huss** (Mr. H) et **Magnus Högdahl** (Vogue), du groupe **Triton** en 1994, était **le tracker de référence** sur PC.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  FASTTRACKER 2.08                                            │
  │  Copyright (c) 1994-1998 Triton                              │
@@ -1326,7 +1321,7 @@ FastTracker 2 a été **le standard de la scène PC** jusqu'à l'arrivée d'Impu
 
 **Copy II PC**, développé par **Central Point Software** en 1985, était **le copieur de référence** sur PC. Il était souvent associé à l'**Option Board**, une carte ISA qui permettait de lire les disquettes protégées au niveau du flux brut.
 
-```
+```text
  ┌──────────────────────────────────────────────────────────────┐
  │  COPY II PC V8.0 + OPTION BOARD                              │
  │  Copyright (c) 1985-1993 Central Point Software              │
@@ -1427,7 +1422,7 @@ Cette double limite — lecture imprécise, écriture limitée — explique que 
 
 Sur PC, une protection par disquette typique consiste à écrire un secteur au **CRC volontairement faux** (ou un secteur « fantôme » d'un format inhabituel) et à vérifier que la lecture retourne bien une erreur précise :
 
-```
+```text
  INT 13h, AH=02 (Read Sectors)  →  Carry=1, AH=10h (« CRC/ECC error »)   ← signature attendue
  Copie par DISKCOPY / XCOPY     →  le secteur est « réparé » : Carry=0       ← la protection échoue
  Copie par Option Board         →  le CRC faux est reproduit                  ← la protection est trompée
@@ -1469,7 +1464,7 @@ Les **groupes** étaient des collectifs organisés qui « sortaient » leurs ver
 - **Hotline** : multi-plateformes
 - **The Humble Guys** (THG) : PC
 - **Skid Row** : PC
-- **Paradox** : PC
+- **Paradox** : Amiga puis PC ⚠️
 - **Quartex** : Amiga
 
 Chaque groupe avait ses **spécialistes** :
@@ -1576,13 +1571,13 @@ Aujourd'hui, ces outils sont pour la plupart **préservés et documentés** par 
 | PowerPacker | Amiga, ST | Packer | 1989 | LZ optimisé pour 68000, format .PP |
 | Deluxe Paint | Amiga, PC | Éditeur graphique | 1985 | Éditeur de référence, animation |
 | Devpac ST | ST | Assembleur | 1980s | Assembleur 68000 de référence |
-| DEGAS / DEGAS Elite | ST | Éditeur graphique | 1985-1986 | Éditeur de référence, animation |
+| DEGAS / DEGAS Elite | ST | Éditeur graphique | 1986-1987 | Éditeur de référence |
 | Discovery Cartridge | ST | Copieur (logiciel+matériel) | 1980s | Accès direct au WD1772, paramètres |
 | HiSoft-Dev | Spectrum | Assembleur | 1980s | Assembleur Z80 de référence |
 | MCoder | Spectrum | Moniteur | 1980s | Moniteur machine de référence |
 | The Quill | Spectrum, CPC, C64 | Éditeur d'aventures | 1983 | Éditeur d'aventures textuelles sans programmation |
 | OCP Art Studio | Spectrum | Éditeur graphique | 1985 | Éditeur de référence |
-| Maxam | CPC | Assembleur | 1991 | Assembleur Z80 de référence |
+| Maxam | CPC | Assembleur | années 1980 ⚠️ | Assembleur Z80 de référence |
 | Soundtrakker | CPC | Tracker | 1990s | Tracker AY de référence |
 | Copy II Plus | Apple II | Copieur | 1983 | Copieur de référence, paramètres |
 | Locksmith | Apple II | Copieur | 1982 | Copieur de référence, fast copy |
@@ -1603,7 +1598,7 @@ Aujourd'hui, ces outils sont pour la plupart **préservés et documentés** par 
 
 | Terme | Définition |
 | --- | --- |
-| Assembleur | Programme qui transforme du code source en langage machine (assembleur) en code binaire exécutable |
+| Assembleur | Programme qui transforme du code source en mnémoniques en code machine binaire exécutable |
 | BBS (Bulletin Board System) | Serveur téléphonique permettant aux utilisateurs de partager des fichiers, des messages, etc. |
 | Crack | Version modifiée d'un logiciel pour contourner ses protections |
 | Cracktro | Intro de signature d'un groupe, ajoutée au jeu craqué |
@@ -1615,9 +1610,8 @@ Aujourd'hui, ces outils sont pour la plupart **préservés et documentés** par 
 | Fast loader | Routine ou matériel accélérant le chargement depuis disquette ou cassette |
 | Freezer | Cartouche ou carte permettant de figer l'état de la machine (via NMI) |
 | NFO | Fichier d'information accompagnant une release, avec crédits, message, graphisme ASCII |
-| Nibble / nibbler | Demi-octet / outil de copie octet-brut de piste |
+| Nibble / nibbler | Demi-octet (4 bits) / outil de copie lisant les pistes au niveau « nibble » (données brutes codées) |
 | NMI (Non-Maskable Interrupt) | Interruption non masquable, utilisée par les freezers pour prendre la main |
-| Packer / Cruncher | Compresseur de programmes |
 | Release | Version crackée d'un jeu, distribuée par un groupe |
 | Swapping | Échange de disquettes entre membres de la scène, par courrier postal |
 | Trainer | Menu de triche (vies infinies, etc.) ajouté à un jeu |
@@ -1633,6 +1627,23 @@ Aujourd'hui, ces outils sont pour la plupart **préservés et documentés** par 
 | 3 | « Speedlock classé parmi les protections de disquette » | Speedlock est une famille de protections de chargeur (cassette **et** disquette), massive sur Spectrum et CPC, également présente sur C64 | Nuance de support |
 | 4 | « EDD (carte) » pour Apple II | Essential Data Duplicator est surtout un **logiciel** ; les freezers matériels Apple II les mieux documentés sont Wildcard et cartes de même famille | Attribution à vérifier |
 | 5 | « Discovery Cartridge (Happy Computers) » | L'attribution exacte de la Discovery Cartridge (Happy Computers ou autre société) varie selon les sources | À recouper |
+| 6 | Auteur de Turbo Assembler (C64) | Attribution incertaine ; on cite souvent Magnus Nyman | 🔧 Source unique non vérifiable |
+| 7 | JiffyDOS « développé par Jim Brain » | Produit de Creative Micro Designs (CMD) | 🔧 Attribution historique |
+| 8 | Soundmonitor, JCH Editor, Future Composer, SIDMON | Soundmonitor : Chris Hülsbeck ; JCH Editor : Jens-Christian Huus ; Future Composer et SidMon à recouper | 🔧 Attributions mélangées dans la source |
+| 9 | ProTracker par « Crusaders » | Amiga Freelancers (d'après les sources courantes) ; filiation SoundTracker → NoiseTracker → ProTracker | 🔧 Attribution et filiation |
+| 10 | FastTracker 2 par « Mikael Malmqvist » | Fredrik Huss (Mr. H) et Magnus Högdahl (Vogue), Triton | 🔧 Attribution |
+| 11 | DEGAS par « Bastion Software » ; nom développé en « DEluxe… » | Tom Hudson / Batteries Included ; Elite en 1987 | 🔧 Attribution et dates |
+| 12 | Koala Painter « groupe Koala », fichier de 6 Ko | Koala Technologies ; fichier ≈ 10 Ko (8 000 + 1 000 + 1 000 + 1 octets) | 🔧 Taille et attribution |
+| 13 | DPaint II (1988) introduit l'animation ; EHB = 32 couleurs | Animbrushes : DPaint III (1989) ; EHB = 64 couleurs (palette de 32) | 🔧 Chronologie / hardware |
+| 14 | C64 « 64 sprites », Amiga « sprites 64×64 » | 8 sprites matériels sur C64 et sur Amiga (16 px de large) | 🔧 Hardware |
+| 15 | OCP = « Output Creative Programs » | Oxford Computer Publishing | 🔧 Attribution |
+| 16 | Maxam « Rebelmoon, 1991 » ; Maxam/AADE « fast loaders » | Assembleur, éditeur et date à recouper (Arnor, années 1980) ; ce ne sont pas des fast loaders | 🔧 Catégorie et attribution |
+| 17 | Multiface « Two/Three » sur CPC | Le Multiface Three vise le Spectrum +3 ; CPC : Multiface Two | 🔧 Compatibilité |
+| 18 | X-Copy, PowerCopy, Copy ST listés comme fast loaders | Ce sont des copieurs ; les loaders sont propriétaires (ou WHDLoad aujourd'hui) | 🔧 Catégorie |
+| 19 | Atari 8-bit : repli sur la Discovery Cartridge | La Discovery Cartridge est un produit Atari ST ; remplacé par le lecteur Happy 1050 | 🔧 Incohérence de plateforme |
+| 20 | Frise : Amiga 1982, « Doom WAD editors » 1992, ProTracker 1987, Pucrunch 1988, Impulse Tracker 1992, Greaseweazle 2020 | Frise réécrite avec dates cohérentes avec le corps du texte | 🔧 Dates |
+| 21 | ACME « 6502, Z80, 68000 » | Famille 6502 | 🔧 Périmètre CPU |
+| 22 | « Renegade renommé Maverick après litige Taito » ; Warp Speed « Skyles » ; HRTMon « Frieden » | Non vérifiés : marqués ⚠️ | ⚠️ À recouper |
 
 ### Annexe D — Pour aller plus loin
 
@@ -1659,6 +1670,50 @@ Aujourd'hui, ces outils sont pour la plupart **préservés et documentés** par 
 - **Greaseweazle** (wiki) : https://github.com/keirf/Greaseweazle/wiki
 - **HxC Floppy Emulator** (HFE) : https://hxc2001.com
 - **Archive.org** et **Internet Archive** (collections de logiciels et de magazines d'époque)
+
+### Annexe E — Compléments (ajouts de cette révision)
+
+#### E.1 Généalogie des trackers
+
+```mermaid
+flowchart LR
+    A["SoundTracker<br/>K. Obarski, 1987"] --> B["NoiseTracker<br/>Mahoney et Kaktus, 1989"]
+    B --> C["ProTracker<br/>1990"]
+    A --> D["Scream Tracker<br/>PC, 1990"]
+    D --> E["Scream Tracker 3 (.S3M)<br/>1994"]
+    C --> F["FastTracker 2 (.XM)<br/>1994"]
+    E --> G["Impulse Tracker (.IT)<br/>1995"]
+    F --> H["MilkyTracker<br/>(esprit FT2)"]
+    G --> I["OpenMPT<br/>(héritier de ModPlug Tracker)"]
+    style C fill:#1e3a5f,color:#fff
+    style F fill:#3a5f1e,color:#fff
+```
+
+#### E.2 Outils complémentaires non traités dans le corps du rapport
+
+| Outil | Plateforme | Fonction | Confiance |
+| --- | --- | --- | --- |
+| Pack-Ice, Atomik Cruncher | Atari ST | Packers très répandus dans les cracks et démos ST (auteurs à recouper) | ✅ |
+| Bytekiller, Titanics Cruncher | Amiga | Crunchers courants avant/à côté de PowerPacker | ✅ |
+| ReSource | Amiga | Désassembleur interactif (étiquetage, rechargement de sessions) | ✅ |
+| Sourcer | PC | Désassembleur commenté (V Communications) | ✅ |
+| SoftICE | PC (386+/Windows) | Débuggeur noyau (NuMega), outil phare du cracking PC des années 1990 | ✅ |
+| W32Dasm, HIEW | PC | Désassembleur Windows / éditeur hexadécimal-désassembleur | ✅ |
+| Norton Disk Editor | PC | Édition directe de secteurs de disquette | ✅ |
+| IDA | PC | Désassembleur interactif (première version en 1991) | ✅ |
+
+#### E.3 Formats d'image et de snapshot courants
+
+| Format | Plateforme | Contenu |
+| --- | --- | --- |
+| D64, G64, T64, TAP | C64 | Disquette 1541 (secteurs / GCR brut), archive de fichiers, cassette |
+| ADF, DMS | Amiga | Image disquette brute / archive compressée |
+| MSA, ST, STX | Atari ST | Image disquette (MSA compressée), image brute, image physique (Pasti) |
+| TAP, TZX, SNA, Z80 | ZX Spectrum | Cassette (brute / avec protections) et snapshots mémoire |
+| DSK / EDSK | Amstrad CPC | Image disquette (standard / étendue, avec pistes non standard) |
+| DO, PO, NIB, WOZ | Apple II | Image par ordre DOS / ProDOS, nibbles bruts, flux (Applesauce) |
+| ATR, XEX | Atari 8 bits | Image disquette, exécutable |
+| IMG, IMD | PC | Image brute, image avec métadonnées de format (ImageDisk) |
 
 ---
 
